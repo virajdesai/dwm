@@ -27,4 +27,4 @@ In order to display status info in the bar, dwmblocks is available. It can also 
 ```
 
 ### Patches
-alpha, dmenumatchtop, fancybar, statuscmd-signal, tilegap
+alpha, fancy bar, monocle symbol, pertag
