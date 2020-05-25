@@ -27,7 +27,7 @@ In order to display status info in the bar, dwmblocks is available. It can also 
 ```
 
 ### Patches
-alpha, fancy bar, monocle symbol, pertag, fibonacci, gaps
+alpha, fancy bar, monocle symbol, pertag, gaps
 
 Indicator dots have been changed to periods.
 Monocle mode does not have the border.

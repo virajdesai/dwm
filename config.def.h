@@ -45,17 +45,13 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",        dwindle },
 	{ "",        tile },    /* first entry is default */
 	{ "",        monocle },
 	{ "",        NULL },    /* no layout function means floating behavior */
-	{ "",        spiral },
- 	
 };
 
 /* key definitions */
@@ -90,13 +86,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0 } },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -113,11 +105,12 @@ static Key keys[] = {
 	//TAGKEYS(                        XK_8,                      7)
 	//TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pac up && pkill -RTMIN+5 dwmblocks") },
-	{ 0,              XF86XK_AudioMute,        spawn,          SHCMD("pac togmute && pkill -RTMIN+5 dwmblocks") },
-	{ 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("pac down && pkill -RTMIN+5 dwmblocks") },
-	{ MODKEY,         XF86XK_AudioMute,        spawn,          SHCMD("pac next-sink && pkill -RTMIN+5 dwmblocks") },
+	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pac up && pkill -RTMIN+9 dwmblocks") },
+	{ 0,              XF86XK_AudioMute,        spawn,          SHCMD("pac togmute && pkill -RTMIN+9 dwmblocks") },
+	{ 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("pac down && pkill -RTMIN+9 dwmblocks") },
+	{ MODKEY,         XF86XK_AudioMute,        spawn,          SHCMD("pac next-sink && pkill -RTMIN+9 dwmblocks") },
 };
+
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
@@ -135,4 +128,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
