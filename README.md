@@ -13,8 +13,8 @@ Afterwards enter the following command to build and install dwm (if necessary as
 ```
 
 ### Running dwm
-If using a display/login manager, dwm.desktop has already been symlinked to /usr/share/xsessions. All that is necessary is to tweak start.sh according to your needs.
 If using startx, add start.sh to ~/.xinitrc.
+If using a display/login manager, a dwm.desktop file can be created and added to /usr/share/xsessions which calls start.sh. 
 
 In order to display status info in the bar, dwmblocks is available. It can also be done my modifying X root window name with a simple script:
 ```sh
